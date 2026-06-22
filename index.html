@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ✏️ 改成你的名字和一句话简介 -->
+  <title>你的名字 · 个人主页</title>
+  <meta name="description" content="一名前端工程师 / 设计爱好者,热爱把想法变成产品。" />
+
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- 防止暗色模式闪屏:在渲染前根据系统/本地存储设置主题 -->
+  <script>
+    (function () {
+      const saved = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const theme = saved || (prefersDark ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+</head>
+
+<body>
+  <!-- ===== 顶部导航 ===== -->
+  <nav class="nav">
+    <a href="#hero" class="nav__brand">你的名字</a>
+
+    <ul class="nav__links" id="nav-links">
+      <li><a href="#about">关于</a></li>
+      <li><a href="#skills">技能</a></li>
+      <li><a href="#projects">作品</a></li>
+      <li><a href="#contact">联系</a></li>
+    </ul>
+
+    <div class="nav__actions">
+      <button id="theme-toggle" class="icon-btn" aria-label="切换主题" title="切换明暗主题">
+        <span class="icon-sun">☀️</span>
+        <span class="icon-moon">🌙</span>
+      </button>
+      <button id="nav-toggle" class="icon-btn nav__toggle" aria-label="菜单">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== 首屏 Hero ===== -->
+  <header id="hero" class="hero">
+    <div class="container hero__inner">
+      <!-- ✏️ 把 assets/avatar.jpg 换成你的照片;没有的话会显示首字母占位 -->
+      <div class="avatar">你</div>
+
+      <h1 class="hero__title">你好,我是 <span class="grad">你的名字</span> 👋</h1>
+      <p class="hero__subtitle">前端工程师 · 设计爱好者 · 开源贡献者</p>
+      <p class="hero__desc">
+        热爱把想法变成产品。专注构建简洁、高效、有温度的 Web 体验。
+      </p>
+
+      <div class="hero__cta">
+        <a href="#contact" class="btn btn--primary">联系我</a>
+        <a href="#projects" class="btn btn--ghost">查看作品</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== 关于 ===== -->
+  <section id="about" class="section">
+    <div class="container">
+      <h2 class="section__title">关于我</h2>
+      <div class="about">
+        <p>
+          <!-- ✏️ 写一段你的自我介绍 -->
+          我是一名有 X 年经验的工程师,擅长把复杂的问题拆解成简单的解决方案。
+          工作之余喜欢写博客、做开源项目、喝咖啡。
+        </p>
+        <p>
+          相信好的产品来自对细节的执着和对用户的同理心。如果你有有趣的项目,欢迎聊聊!
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 技能 ===== -->
+  <section id="skills" class="section section--alt">
+    <div class="container">
+      <h2 class="section__title">技能栈</h2>
+      <div class="skills">
+        <!-- ✏️ 按分组替换成你的技能 -->
+        <div class="skill-group">
+          <h3>前端</h3>
+          <div class="tags">
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">TypeScript</span>
+            <span class="tag">React</span>
+            <span class="tag">Vue</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h3>后端 / 工具</h3>
+          <div class="tags">
+            <span class="tag">Node.js</span>
+            <span class="tag">Git</span>
+            <span class="tag">Docker</span>
+            <span class="tag">Figma</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 作品 ===== -->
+  <section id="projects" class="section">
+    <div class="container">
+      <h2 class="section__title">精选作品</h2>
+      <div class="projects">
+        <!-- ✏️ 复制一份 <article> 就能多加一个作品 -->
+        <article class="card">
+          <h3>项目名称 A</h3>
+          <p>一句话描述这个项目解决了什么问题、用了什么技术、有什么亮点。</p>
+          <div class="card__links">
+            <a href="#" target="_blank" rel="noopener">在线Demo ↗</a>
+            <a href="#" target="_blank" rel="noopener">源码 ↗</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>项目名称 B</h3>
+          <p>用简洁的语言说明项目的价值。突出你的贡献和技术难点。</p>
+          <div class="card__links">
+            <a href="#" target="_blank" rel="noopener">在线Demo ↗</a>
+            <a href="#" target="_blank" rel="noopener">源码 ↗</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>项目名称 C</h3>
+          <p>又一个例子。可以放开源项目、毕设、副业产品等。</p>
+          <div class="card__links">
+            <a href="#" target="_blank" rel="noopener">在线Demo ↗</a>
+            <a href="#" target="_blank" rel="noopener">源码 ↗</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 联系 ===== -->
+  <section id="contact" class="section section--alt">
+    <div class="container contact">
+      <h2 class="section__title">保持联系</h2>
+      <p class="contact__lead">有合作机会或想聊聊?随时找我 👇</p>
+      <div class="contact__links">
+        <!-- ✏️ 换成你的邮箱和社交链接 -->
+        <a class="contact-link" href="mailto:you@example.com">✉️ Email</a>
+        <a class="contact-link" href="https://github.com/你的用户名" target="_blank" rel="noopener">🐙 GitHub</a>
+        <a class="contact-link" href="#" target="_blank" rel="noopener">💼 LinkedIn</a>
+        <a class="contact-link" href="#" target="_blank" rel="noopener">🐦 Twitter</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 页脚 ===== -->
+  <footer class="footer">
+    <div class="container">
+      <p>© <span id="year"></span> 你的名字 · 用 ❤️ 制作</p>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
