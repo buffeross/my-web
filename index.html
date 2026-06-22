@@ -4,9 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- ✏️ 改成你的名字和一句话简介 -->
-  <title>你的名字 · 个人主页</title>
-  <meta name="description" content="一名前端工程师 / 设计爱好者,热爱把想法变成产品。" />
+  <title>Burt Hu · 个人主页</title>
+  <meta name="description" content="Burt Hu,工程师,专注于数据分析与团队管理。" />
 
   <link rel="stylesheet" href="css/style.css" />
 
@@ -24,12 +23,12 @@
 <body>
   <!-- ===== 顶部导航 ===== -->
   <nav class="nav">
-    <a href="#hero" class="nav__brand">你的名字</a>
+    <a href="#hero" class="nav__brand">Burt Hu</a>
 
     <ul class="nav__links" id="nav-links">
       <li><a href="#about">关于</a></li>
       <li><a href="#skills">技能</a></li>
-      <li><a href="#projects">作品</a></li>
+      <li><a href="#projects">经历</a></li>
       <li><a href="#contact">联系</a></li>
     </ul>
 
@@ -48,17 +47,17 @@
   <header id="hero" class="hero">
     <div class="container hero__inner">
       <!-- ✏️ 把 assets/avatar.jpg 换成你的照片;没有的话会显示首字母占位 -->
-      <div class="avatar">你</div>
+      <div class="avatar">B</div>
 
-      <h1 class="hero__title">你好,我是 <span class="grad">你的名字</span> 👋</h1>
-      <p class="hero__subtitle">前端工程师 · 设计爱好者 · 开源贡献者</p>
+      <h1 class="hero__title">你好,我是 <span class="grad">Burt Hu</span> 👋</h1>
+      <p class="hero__subtitle">工程师 · 数据分析 · 团队管理</p>
       <p class="hero__desc">
-        热爱把想法变成产品。专注构建简洁、高效、有温度的 Web 体验。
+        用数据驱动决策,用管理放大团队效能。专注把复杂问题拆解成可落地的方案。
       </p>
 
       <div class="hero__cta">
         <a href="#contact" class="btn btn--primary">联系我</a>
-        <a href="#projects" class="btn btn--ghost">查看作品</a>
+        <a href="#projects" class="btn btn--ghost">查看经历</a>
       </div>
     </div>
   </header>
@@ -69,12 +68,12 @@
       <h2 class="section__title">关于我</h2>
       <div class="about">
         <p>
-          <!-- ✏️ 写一段你的自我介绍 -->
-          我是一名有 X 年经验的工程师,擅长把复杂的问题拆解成简单的解决方案。
-          工作之余喜欢写博客、做开源项目、喝咖啡。
+          我是 Burt Hu,一名工程师,长期专注于<strong>数据分析</strong>与<strong>团队管理</strong>两大方向。
+          擅长从海量信息中提炼洞察,用数据支撑决策,并把目标拆解成可执行的路径。
         </p>
         <p>
-          相信好的产品来自对细节的执着和对用户的同理心。如果你有有趣的项目,欢迎聊聊!
+          同时带过多个跨职能项目,相信清晰的流程、对齐的目标和高效的沟通,
+          是让团队持续产出高质量结果的关键。欢迎一起交流合作。
         </p>
       </div>
     </div>
@@ -85,61 +84,63 @@
     <div class="container">
       <h2 class="section__title">技能栈</h2>
       <div class="skills">
-        <!-- ✏️ 按分组替换成你的技能 -->
+        <!-- ✏️ 按需增删标签 -->
         <div class="skill-group">
-          <h3>前端</h3>
+          <h3>数据分析</h3>
           <div class="tags">
-            <span class="tag">HTML</span>
-            <span class="tag">CSS</span>
-            <span class="tag">JavaScript</span>
-            <span class="tag">TypeScript</span>
-            <span class="tag">React</span>
-            <span class="tag">Vue</span>
+            <span class="tag">数据分析</span>
+            <span class="tag">问题拆解</span>
+            <span class="tag">数据可视化</span>
+            <span class="tag">SQL</span>
+            <span class="tag">商业洞察</span>
+            <span class="tag">报表体系</span>
           </div>
         </div>
         <div class="skill-group">
-          <h3>后端 / 工具</h3>
+          <h3>团队管理</h3>
           <div class="tags">
-            <span class="tag">Node.js</span>
-            <span class="tag">Git</span>
-            <span class="tag">Docker</span>
-            <span class="tag">Figma</span>
+            <span class="tag">项目管理</span>
+            <span class="tag">团队协作</span>
+            <span class="tag">流程优化</span>
+            <span class="tag">跨部门沟通</span>
+            <span class="tag">目标管理</span>
+            <span class="tag">风险控制</span>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== 作品 ===== -->
+  <!-- ===== 经历 / 项目 ===== -->
   <section id="projects" class="section">
     <div class="container">
-      <h2 class="section__title">精选作品</h2>
+      <h2 class="section__title">项目经历</h2>
       <div class="projects">
-        <!-- ✏️ 复制一份 <article> 就能多加一个作品 -->
+        <!-- ✏️ 复制一份 <article> 就能多加一条;下面是示例,请替换成真实经历 -->
         <article class="card">
-          <h3>项目名称 A</h3>
-          <p>一句话描述这个项目解决了什么问题、用了什么技术、有什么亮点。</p>
+          <h3>数据分析项目</h3>
+          <p>搭建业务数据看板,定位关键瓶颈,推动核心指标提升 30%。</p>
           <div class="card__links">
-            <a href="#" target="_blank" rel="noopener">在线Demo ↗</a>
-            <a href="#" target="_blank" rel="noopener">源码 ↗</a>
+            <a href="#" target="_blank" rel="noopener">详情 ↗</a>
+            <a href="#" target="_blank" rel="noopener">复盘 ↗</a>
           </div>
         </article>
 
         <article class="card">
-          <h3>项目名称 B</h3>
-          <p>用简洁的语言说明项目的价值。突出你的贡献和技术难点。</p>
+          <h3>流程优化项目</h3>
+          <p>梳理跨部门协作流程,缩短交付周期,提升团队整体效率。</p>
           <div class="card__links">
-            <a href="#" target="_blank" rel="noopener">在线Demo ↗</a>
-            <a href="#" target="_blank" rel="noopener">源码 ↗</a>
+            <a href="#" target="_blank" rel="noopener">详情 ↗</a>
+            <a href="#" target="_blank" rel="noopener">复盘 ↗</a>
           </div>
         </article>
 
         <article class="card">
-          <h3>项目名称 C</h3>
-          <p>又一个例子。可以放开源项目、毕设、副业产品等。</p>
+          <h3>团队管理</h3>
+          <p>带领团队完成多个重点项目,对齐目标、把控风险、培养人才。</p>
           <div class="card__links">
-            <a href="#" target="_blank" rel="noopener">在线Demo ↗</a>
-            <a href="#" target="_blank" rel="noopener">源码 ↗</a>
+            <a href="#" target="_blank" rel="noopener">详情 ↗</a>
+            <a href="#" target="_blank" rel="noopener">复盘 ↗</a>
           </div>
         </article>
       </div>
@@ -152,9 +153,9 @@
       <h2 class="section__title">保持联系</h2>
       <p class="contact__lead">有合作机会或想聊聊?随时找我 👇</p>
       <div class="contact__links">
-        <!-- ✏️ 换成你的邮箱和社交链接 -->
-        <a class="contact-link" href="mailto:you@example.com">✉️ Email</a>
-        <a class="contact-link" href="https://github.com/你的用户名" target="_blank" rel="noopener">🐙 GitHub</a>
+        <!-- ✏️ 换成你的社交链接(不需要的整行删除即可) -->
+        <a class="contact-link" href="mailto:burtone@126.com">✉️ Email</a>
+        <a class="contact-link" href="https://github.com/" target="_blank" rel="noopener">🐙 GitHub</a>
         <a class="contact-link" href="#" target="_blank" rel="noopener">💼 LinkedIn</a>
         <a class="contact-link" href="#" target="_blank" rel="noopener">🐦 Twitter</a>
       </div>
@@ -164,7 +165,7 @@
   <!-- ===== 页脚 ===== -->
   <footer class="footer">
     <div class="container">
-      <p>© <span id="year"></span> 你的名字 · 用 ❤️ 制作</p>
+      <p>© <span id="year"></span> Burt Hu · 用 ❤️ 制作</p>
     </div>
   </footer>
 
