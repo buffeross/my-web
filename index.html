@@ -5,9 +5,49 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Burt Hu · 个人主页</title>
-  <meta name="description" content="Burt Hu,工程师,专注于数据分析与团队管理。" />
+  <meta name="description" content="Burt Hu,工程师,专注于数据分析与团队管理。用数据驱动决策,用管理放大团队效能。" />
+  <meta name="author" content="Burt Hu" />
+  <link rel="canonical" href="https://buffeross.github.io/my-web/" />
+
+  <!-- Favicon:内联 SVG,与头像渐变风格一致,零额外文件 -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%236366f1'/%3E%3Cstop offset='1' stop-color='%23ec4899'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='22' fill='url(%23g)'/%3E%3Ctext x='50' y='72' font-size='62' font-family='Arial,Helvetica,sans-serif' font-weight='700' fill='white' text-anchor='middle'%3EB%3C/text%3E%3C/svg%3E" />
+  <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%236366f1'/%3E%3Cstop offset='1' stop-color='%23ec4899'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='22' fill='url(%23g)'/%3E%3Ctext x='50' y='72' font-size='62' font-family='Arial,Helvetica,sans-serif' font-weight='700' fill='white' text-anchor='middle'%3EB%3C/text%3E%3C/svg%3E" />
+
+  <!-- 浏览器地址栏主题色(跟随系统明暗) -->
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#0f172a" media="(prefers-color-scheme: dark)" />
+
+  <!-- 社交分享卡:Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Burt Hu" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:url" content="https://buffeross.github.io/my-web/" />
+  <meta property="og:title" content="Burt Hu · 个人主页" />
+  <meta property="og:description" content="工程师 · 数据分析 · 团队管理。用数据驱动决策,用管理放大团队效能。" />
+  <!-- ✏️ 放一张 1200×630 的封面图到 assets/og-cover.png 后,取消下面两行注释,分享时即可显示预览图 -->
+  <!-- <meta property="og:image" content="https://buffeross.github.io/my-web/assets/og-cover.png" /> -->
+  <!-- <meta name="twitter:image" content="https://buffeross.github.io/my-web/assets/og-cover.png" /> -->
+
+  <!-- Twitter / X 分享卡 -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Burt Hu · 个人主页" />
+  <meta name="twitter:description" content="工程师 · 数据分析 · 团队管理。" />
 
   <link rel="stylesheet" href="css/style.css" />
+
+  <!-- 结构化数据,帮助搜索引擎理解页面主体 -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Burt Hu",
+    "jobTitle": "工程师",
+    "description": "工程师,专注于数据分析与团队管理。",
+    "url": "https://buffeross.github.io/my-web/",
+    "email": "mailto:burtone@126.com",
+    "sameAs": ["https://github.com/buffeross"]
+  }
+  </script>
 
   <!-- 防止暗色模式闪屏:在渲染前根据系统/本地存储设置主题 -->
   <script>
@@ -33,11 +73,11 @@
     </ul>
 
     <div class="nav__actions">
-      <button id="theme-toggle" class="icon-btn" aria-label="切换主题" title="切换明暗主题">
-        <span class="icon-sun">☀️</span>
-        <span class="icon-moon">🌙</span>
+      <button id="theme-toggle" class="icon-btn" aria-label="切换明暗主题" title="切换明暗主题" aria-pressed="false">
+        <span class="icon-sun" aria-hidden="true">☀️</span>
+        <span class="icon-moon" aria-hidden="true">🌙</span>
       </button>
-      <button id="nav-toggle" class="icon-btn nav__toggle" aria-label="菜单">
+      <button id="nav-toggle" class="icon-btn nav__toggle" aria-label="展开菜单" aria-expanded="false" aria-controls="nav-links">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -47,7 +87,7 @@
   <header id="hero" class="hero">
     <div class="container hero__inner">
       <!-- ✏️ 把 assets/avatar.jpg 换成你的照片;没有的话会显示首字母占位 -->
-      <div class="avatar">B</div>
+      <div class="avatar" aria-hidden="true">B</div>
 
       <h1 class="hero__title">你好,我是 <span class="grad">Burt Hu</span> 👋</h1>
       <p class="hero__subtitle">工程师 · 数据分析 · 团队管理</p>
@@ -120,28 +160,17 @@
         <article class="card">
           <h3>数据分析项目</h3>
           <p>搭建业务数据看板,定位关键瓶颈,推动核心指标提升 30%。</p>
-          <div class="card__links">
-            <a href="#" target="_blank" rel="noopener">详情 ↗</a>
-            <a href="#" target="_blank" rel="noopener">复盘 ↗</a>
-          </div>
+          <!-- ✏️ 有真实详情/复盘链接后,在下面加回:<div class="card__links"><a href="..." target="_blank" rel="noopener">详情 ↗</a></div> -->
         </article>
 
         <article class="card">
           <h3>流程优化项目</h3>
           <p>梳理跨部门协作流程,缩短交付周期,提升团队整体效率。</p>
-          <div class="card__links">
-            <a href="#" target="_blank" rel="noopener">详情 ↗</a>
-            <a href="#" target="_blank" rel="noopener">复盘 ↗</a>
-          </div>
         </article>
 
         <article class="card">
           <h3>团队管理</h3>
           <p>带领团队完成多个重点项目,对齐目标、把控风险、培养人才。</p>
-          <div class="card__links">
-            <a href="#" target="_blank" rel="noopener">详情 ↗</a>
-            <a href="#" target="_blank" rel="noopener">复盘 ↗</a>
-          </div>
         </article>
       </div>
     </div>
@@ -154,10 +183,9 @@
       <p class="contact__lead">有合作机会或想聊聊?随时找我 👇</p>
       <div class="contact__links">
         <!-- ✏️ 换成你的社交链接(不需要的整行删除即可) -->
-        <a class="contact-link" href="mailto:burtone@126.com">✉️ Email</a>
-        <a class="contact-link" href="https://github.com/" target="_blank" rel="noopener">🐙 GitHub</a>
-        <a class="contact-link" href="#" target="_blank" rel="noopener">💼 LinkedIn</a>
-        <a class="contact-link" href="#" target="_blank" rel="noopener">🐦 Twitter</a>
+        <a class="contact-link" href="mailto:burtone@126.com" aria-label="通过 Email 联系 Burt Hu">✉️ Email</a>
+        <a class="contact-link" href="https://github.com/buffeross" target="_blank" rel="noopener" aria-label="在 GitHub 上查看 Burt Hu">🐙 GitHub</a>
+        <!-- ✏️ 有 LinkedIn / Twitter 等账号后,在下面加回对应链接 -->
       </div>
     </div>
   </section>
@@ -168,6 +196,9 @@
       <p>© <span id="year"></span> Burt Hu · 用 ❤️ 制作</p>
     </div>
   </footer>
+
+  <!-- ===== 回到顶部 ===== -->
+  <button id="back-to-top" class="back-to-top" aria-label="回到顶部" title="回到顶部">↑</button>
 
   <script src="js/script.js"></script>
 </body>

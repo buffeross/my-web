@@ -40,6 +40,13 @@ body {
 
 a { color: inherit; text-decoration: none; }
 
+/* 键盘焦点轮廓(仅键盘导航显示,不影响鼠标点击) */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
 .container { width: min(820px, 92%); margin: 0 auto; }
 
 /* ============ 导航 ============ */
@@ -61,6 +68,7 @@ a { color: inherit; text-decoration: none; }
 .nav__links { display: flex; gap: 28px; list-style: none; }
 .nav__links a { color: var(--muted); font-size: 0.95rem; transition: color 0.2s; }
 .nav__links a:hover { color: var(--accent); }
+.nav__links a.is-active { color: var(--accent); font-weight: 600; }
 
 .nav__actions { display: flex; align-items: center; gap: 8px; }
 
@@ -212,4 +220,40 @@ a { color: inherit; text-decoration: none; }
   .nav__links li { border-top: 1px solid var(--border); }
   .nav__links a { display: block; padding: 14px 5%; }
   .hero { padding: 70px 0 50px; }
+}
+
+/* ============ 回到顶部按钮 ============ */
+.back-to-top {
+  position: fixed;
+  right: 20px; bottom: 20px;
+  width: 44px; height: 44px;
+  border: none;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  font-size: 1.3rem;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  opacity: 0;
+  transform: translateY(12px);
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  z-index: 90;
+}
+.back-to-top.is-visible {
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+}
+.back-to-top:hover { filter: brightness(1.07); }
+
+/* ============ 降低动效偏好(无障碍) ============ */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    transition-duration: 0.001ms !important;
+    animation-duration: 0.001ms !important;
+  }
+  .reveal { opacity: 1 !important; transform: none !important; }
 }
